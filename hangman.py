@@ -6,6 +6,7 @@ import string
 times_won, times_lost = 0, 0
 
 
+# Runs the game, it's the main masterpiece. It returns the number of wins and loses
 def play(wins, loses):
     words = ["python", "java", "swift", "javascript"]
     word_choice = random.choice(words)
@@ -13,7 +14,7 @@ def play(wins, loses):
     print('H A N G M A N -- 1.0.0')
     guess_value = 1
     guess_list, fail_list = [], []
-    while guess_value <= 8:
+    while guess_value <= 8:  # gives the player 8 chances only for guessing the characters
         print("\n{}".format(hint))
         guess_letter = input("Input a letter: ")
         if len(guess_letter) != 1:
@@ -47,6 +48,7 @@ def play(wins, loses):
     return wins, loses
 
 
+# The game call, controls the menu and its activities
 def the_game(wins, loses):
     while True:
         selection_list = ['1', '2', '3']
@@ -62,5 +64,6 @@ def the_game(wins, loses):
                 break
 
 
+# Execution call
 if __name__ == "__main__":
     the_game(times_won, times_lost)
